@@ -1,0 +1,32 @@
+header.top-bar
+    nav(
+        class="container"
+        data-focus-trap
+    )
+        a(
+            href="#"
+            class="logo"
+            aria-label="Home"
+        )
+            include /images/logo/logotype.svg
+        button(
+            accesskey="m"
+            class="hamburger"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="top-bar-menu"
+            data-focusable
+        )
+            - for (let i = 3; i > 0; i--)
+                span(aria-hidden="true")
+        ul(
+            class="menu"
+            id="top-bar-menu"
+        )
+            each item in ["About", "Projects", "Services", "Contact"]
+                li
+                    a(
+                        href=`#${item.toLowerCase()}`
+                        class="top-bar-link"
+                        data-focusable
+                    ) #{item}

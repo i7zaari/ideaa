@@ -1,0 +1,8 @@
+@each $weight in [400, 500, 700]
+    @font-face
+        font:
+            family: "Poppins"
+            weight: $weight
+            style: normal
+            display: fallback
+        src: url("/src/fonts/poppins-#{$weight}.woff2") format("woff2"), url("/src/fonts/poppins-#{$weight}.woff") format("woff"), url("/src/fonts/poppins-#{$weight}.ttf") format("truetype")

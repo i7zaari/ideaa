@@ -1,0 +1,10 @@
+=animation($name, $duration: 250, $timing-function: linear, $fill-mode: both)
+    .#{$name}
+        animation:
+            name: $name
+            duration: $duration + ms
+            timing-function: $timing-function
+            fill-mode: $fill-mode
+        @at-root
+            @keyframes #{$name}
+                @content

@@ -1,0 +1,16 @@
+extends /pug/layouts/default
+
+append variables
+    -
+        title = "Page not found &bull; ideaa"
+        url += "404.html"
+
+block main
+    main#page-not-found
+        .container
+            h1 Error 404
+            p The page you’re looking for can’t be found.
+            a(
+                href="/ideaa"
+                class="button"
+            ) Go home

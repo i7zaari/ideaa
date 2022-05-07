@@ -1,0 +1,28 @@
+@use "../../helpers" as *
+
+#home
+    #about
+        header
+            +
+                div
+                    +min($lg)
+                        display: flex
+                        flex-direction: row-reverse
+                        align-items: center
+                    div:first-child
+                        background-color: $accent
+                        border-radius: 4px
+                        overflow: hidden
+                        +max($lg)
+                            margin-bottom: 32px
+                        +min($lg)
+                            height: 500px
+                            width: 50%
+                            margin-left: 64px
+                        img
+                            height: 100%
+                            width: 100%
+                            object-fit: cover
+                    div:last-child
+                        +min($lg)
+                            width: 50%

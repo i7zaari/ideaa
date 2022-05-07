@@ -1,0 +1,7 @@
+=transition($property, $duration: 250, $delay: 0, $timing-fn: linear)
+    transition:
+        property: $property
+        duration: $duration + ms
+        @if $delay != 0
+            delay: $delay + ms
+        timing-function: $timing-fn

@@ -1,0 +1,42 @@
+@use "../helpers" as *
+
+nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .logo
+        height: 40px
+        width: 40px
+        svg
+            height: inherit
+            width: auto
+            fill: currentColor
+            .wordmark
+                transform-origin: center
+                transform: scale(0.8)
+                opacity: 0
+                +transition((transform, opacity))
+    .menu
+        display: flex
+        +max($md)
+            background-color: $primary-background
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            position: fixed
+            height: 100%
+            width: 100%
+            left: -100%
+            top: 0
+            visibility: hidden
+            +transition(left)
+        li
+            +max($md)
+                font-size: 1.5rem
+                opacity: 0
+                +transition(opacity, 500, 250)
+                &:not(:last-child)
+                    margin-bottom: 8px
+            +min($md)
+                &:not(:last-child)
+                    margin-right: 16px

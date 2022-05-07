@@ -1,0 +1,25 @@
+@use "../../helpers" as *
+
+#home
+    #projects
+        ul
+            display: flex
+            flex-wrap: wrap
+            li
+                margin-bottom: 64px
+                +min($xl)
+                    width: 50%
+                    &:nth-child(odd)
+                        padding-right: 32px
+                    &:nth-child(even)
+                        padding-left: 32px
+                img
+                    background-color: $secondary-background
+                    border-radius: 4px
+                    width: 100%
+                    margin-bottom: 8px
+                    +transition(filter)
+                &:hover img
+                    filter: brightness(90%)
+                &.hidden
+                    display: none

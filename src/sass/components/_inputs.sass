@@ -1,0 +1,30 @@
+@use "../helpers" as *
+
+input[type="text"],
+input[type="email"],
+textarea
+    width: 100%
+    background-color: $secondary-background
+    border-radius: 4px
+    padding: 12px
+    border:
+        width: 2px
+        style: solid
+        color: transparent
+    margin-bottom: 32px
+    +transition(border-color)
+    &::placeholder
+        +transition(opacity)
+    &:focus
+        border-color: $accent
+        outline: none
+        &::placeholder
+            opacity: 50%
+        &:not(:placeholder-shown):invalid
+            border-color: $danger
+        &:not(:placeholder-shown):valid
+            border-color: $success
+
+textarea
+    min-height: 300px
+    resize: vertical
