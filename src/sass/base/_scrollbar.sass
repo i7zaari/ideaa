@@ -1,0 +1,25 @@
+@use "../helpers" as *
+
+::-webkit-scrollbar
+    height: 4px
+    width: 4px
+    &-track
+        background-color: transparent
+    &-thumb
+        border-radius: 4px
+        background-color: $accent
+        &:hover
+            background-color: darken($accent, $darken-amount)
+
+// ! Scrollbars on hover ! //
+
+body,
+textarea
+    &::-webkit-scrollbar-thumb
+        background-color: transparent
+
+html:hover body::-webkit-scrollbar-thumb,
+textarea:hover::-webkit-scrollbar-thumb
+    background-color: $accent
+    &:hover
+        background-color: darken($accent, $darken-amount)

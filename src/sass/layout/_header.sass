@@ -1,0 +1,23 @@
+@use "../helpers" as *
+
+header
+    &.top-bar
+        background-color: $primary-background
+        padding:
+            top: 24px
+            bottom: 24px
+        position: sticky
+        top: 0
+        z-index: 998
+        +transition((background-color, box-shadow))
+        &.scrolled
+            background-color: $primary-background
+            box-shadow: 0 0 32px hsl(0, 0%, 85%)
+            .logo
+                width: auto
+                .wordmark
+                    transform: none
+                    opacity: initial
+    &.section-header
+        margin-bottom: 64px
+        text-align: center

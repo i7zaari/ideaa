@@ -1,0 +1,145 @@
+extends /pug/layouts/default
+
+block header
+    include /pug/includes/common/noscript
+    include /pug/includes/common/header
+
+block main
+    main#home
+        section#hero
+            .container
+                div
+                    h1 We are #[span(translate="no") ideaa]
+                    p It was a lovely day for a walk in the park. The birds were singing and the kids were all back at school.
+                    a(
+                        href="#contact"
+                        class="button"
+                    ) Contact us
+        section#about
+            .container
+                header.section-header
+                    h2.section-title About
+                div
+                    div
+                        img(
+                            src="/src/images/etc/building.jpg"
+                            alt="Yellow and white concrete building"
+                            loading="lazy"
+                        )
+                    div
+                        h3.about-title Every #[span(translate="no") ideaa] helps
+                        p He walked down the steps from the train station in a bit of a hurry knowing the secrets in the briefcase must be secured as quickly as possible. Bounding down the steps, he heard something behind him and quickly turned in a panic. There was nobody there but a pair of old worn-out shoes were placed neatly on the steps he had just come down. Had he past them without seeing them? It didn't seem possible. He was about to turn and be on his way when a deep chill filled his body.
+                        p He looked at the sand. Picking up a handful, he wondered how many grains were in his hand. Hundreds of thousands? "Not enough," the said under his breath. I need more.
+        section#projects
+            .container
+                header.section-header
+                    h2.section-title Projects
+                ul
+                    include /pug/includes/data/projects
+                    each project in projects
+                        li
+                            a(
+                                href=project.url
+                                target="_blank"
+                            )
+                                img(
+                                    src=project.image
+                                    alt=`${project.name} thumbnail`
+                                    loading="lazy"
+                                    aria-hidden="true"
+                                )
+                                h3(
+                                    class="project-name"
+                                    translate="no"
+                                    aria-label=`${project.name} project`
+                                ) #{project.name}
+                                p(aria-hidden="true") #{project.services.join(", ")}
+                button(
+                    class="see-more"
+                    aria-label="See more projects"
+                ) See more
+        section#services
+            .container
+                header.section-header
+                    h2.section-title Services
+                ul
+                    include /pug/includes/data/services
+                    each service in services
+                        li
+                            h3 #{service.name}
+                            p #{service.description}
+        section#contact
+            .container
+                header.section-header
+                    h2.section-title Contact
+                div
+                    form(
+                        action=""
+                        method="POST"
+                    )
+                        input(
+                            type="text"
+                            name="Name"
+                            placeholder="Name"
+                            aria-label="Your name"
+                            spellcheck="false"
+                            autocapitalize="words"
+                            dir="auto"
+                            required
+                        )
+                        input(
+                            type="email"
+                            name="Email address"
+                            placeholder="Email address"
+                            aria-label="Your email address"
+                            spellcheck="false"
+                            pattern="^[^@\\s]+@[^@\\s]+[.][^@\\s]+$"
+                            required
+                        )
+                        textarea(
+                            name="Message"
+                            placeholder="Message"
+                            aria-label="Your message"
+                            spellcheck="true"
+                            autocapitalize="sentences"
+                            dir="auto"
+                            required
+                        )
+                        button(type="submit") Send message
+                    aside
+                        .location
+                            h3 Location
+                            address(translate="no")
+                                | Street address
+                                br
+                                | City, State and ZIP code
+                                br
+                                | Country
+                        .we-are-social
+                            h3 We are social
+                            ul
+                                li
+                                    a(
+                                        href="#"
+                                        target="_blank"
+                                        class="social"
+                                        aria-label="ideaa on Instagram"
+                                    )
+                                        include /images/social/instagram.svg
+                                li
+                                    a(
+                                        href="#"
+                                        target="_blank"
+                                        class="social"
+                                        aria-label="ideaa on Twitter"
+                                    )
+                                        include /images/social/twitter.svg
+
+block footer
+    include /pug/includes/common/footer
+
+block scripts
+    script(
+        src="/src/javascript/main.js"
+        type="module"
+    )

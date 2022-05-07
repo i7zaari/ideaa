@@ -1,0 +1,20 @@
+@use "../helpers" as *
+
+.overflow-hidden
+    overflow: hidden
+
+.section-title
+    position: relative
+    display: inline-block
+    &::before
+        content: ""
+        width: 50%
+        position: absolute
+        left: 0
+        bottom: 0
+        border-bottom: 4px solid $accent
+        border-radius: 4px
+        +transition(width)
+    &:hover
+        &::before
+            width: 100%

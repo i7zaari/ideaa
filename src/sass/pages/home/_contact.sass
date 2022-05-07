@@ -1,0 +1,24 @@
+@use "../../helpers" as *
+
+#home
+    #contact
+        header
+            +
+                div
+                    +min($lg)
+                        display: flex
+                        column-gap: 64px
+                    +min($xl)
+                        column-gap: 128px
+                    aside
+                        +min($lg)
+                            white-space: nowrap
+                        .location
+                            margin-bottom: 32px
+                            +max($lg)
+                                margin-top: 32px
+                        .we-are-social
+                            ul
+                                display: inline-flex
+                                li:not(:last-child)
+                                    margin-right: 16px

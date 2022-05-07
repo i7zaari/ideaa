@@ -1,0 +1,51 @@
+@use "../helpers" as *
+
+button[class="hamburger"]
+    background-color: transparent
+    height: 40px
+    width: 40px
+    padding: 2px
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    z-index: 999
+    span
+        height: 3px
+        width: 100%
+        background-color: $primary-text
+        border-radius: 3px
+        +transition(transform)
+    &[aria-expanded="true"]
+        span:nth-child(1)
+            transform: translateY(12px) rotateZ(45deg)
+        span:nth-child(2)
+            transform: scale(0)
+        span:nth-child(3)
+            transform: translateY(-12px) rotateZ(-45deg)
+        +
+            .menu
+                left: 0
+                visibility: visible
+                li
+                    opacity: 1
+    +min($md)
+        display: none
+
+button
+    border: none
+
+button:not(.hamburger),
+a[class="button"]
+    background-color: $accent
+    color: $primary-text
+    padding: 12px 32px
+    border-radius: 4px
+    font-weight: 500
+    +transition(background-color)
+    &:hover
+        background-color: darken($accent, $darken-amount)
+    &:active
+        background-color: darken($accent, $darken-amount * 2)
+
+button[type="submit"]
+    width: 100%

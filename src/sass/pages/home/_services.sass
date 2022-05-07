@@ -1,0 +1,32 @@
+@use "../../helpers" as *
+
+#home
+    #services
+        li
+            position: relative
+            padding: 32px
+            overflow: hidden
+            border-radius: 4px
+            min-height: 300px
+            background:
+                color: $secondary-background
+                size: cover
+                position: center
+                repeat: no-repeat
+            @each $n, $image-filename in (1: "web-design")
+                &:nth-child(#{$n})
+                    background-image: url("/src/images/services/#{$image-filename}.jpg")
+            &:not(:last-child)
+                margin-bottom: 64px
+            &::before
+                content: ""
+                height: 100%
+                width: 100%
+                position: absolute
+                top: 0
+                left: 0
+                background-color: inherit
+                opacity: 75%
+            &
+                *
+                    position: inherit

@@ -1,0 +1,36 @@
+@use "../helpers" as *
+
+a
+    text-decoration: none
+    text-underline-offset: 3px
+    &[class="logo"]
+        color: $primary-text
+    &[class="top-bar-link"]
+        color: $primary-text
+        font-weight: 500
+        +transition(color)
+        &:hover
+            color: $accent
+    &
+        .project-name
+            color: $primary-text
+            text-decoration: underline transparent
+            +transition(text-decoration-color)
+        &:hover .project-name
+            text-decoration-color: $accent
+    &[class="social"]
+        color: $primary-text
+        display: inline-flex
+        background-color: $secondary-background
+        padding: 12px
+        border-radius: 4px
+        +transition(background-color)
+        &:hover
+            background-color: $accent
+    &[rel="license"]
+        color: $secondary-text
+        text-decoration: underline transparent
+        +transition((color, text-decoration-color))
+        &:hover
+            color: $primary-text
+            text-decoration-color: initial

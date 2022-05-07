@@ -1,0 +1,52 @@
+@use "../helpers" as *
+
+:root
+    font:
+        family: "Poppins", Helvetica, Arial, sans-serif
+        size: 16px
+    letter-spacing: 0.25px
+    line-height: 1.5
+
+h1
+    font-size: 5rem
+    +max($md)
+        font-size: 4rem
+    +max($sm)
+        font-size: 3rem
+    +
+        p
+            margin-bottom: 64px
+            max-width: fit-content
+
+h2
+    font-size: 3rem
+    +max($md)
+        font-size: 2.5rem
+    +max($sm)
+        font-size: 2rem
+
+h3
+    font-size: 2rem
+    +max($md)
+        font-size: 1.75rem
+    +max($sm)
+        font-size: 1.5rem
+    &:not(.about-title)
+        margin-bottom: 4px
+        +max($sm)
+            margin-bottom: 2px
+    &.about-title
+        margin-bottom: 16px
+
+h2, h3
+    font-weight: 500
+
+p
+    color: $secondary-text
+    +
+        p
+            margin-top: 16px
+
+address
+    color: $secondary-text
+    font-style: normal
